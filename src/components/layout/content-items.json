@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_layout_content_items",
+  "info": {
+    "displayName": "Content Items"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "item": {
+      "displayName": "Item",
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.item"
+    },
+    "imageRight": {
+      "type": "boolean"
+    }
+  }
+}
