@@ -1,66 +1,5 @@
 import type { Struct, Schema } from '@strapi/strapi';
 
-export interface ElementsSocialLinks extends Struct.ComponentSchema {
-  collectionName: 'components_elements_social_links';
-  info: {
-    displayName: 'Social Links';
-    description: '';
-  };
-  attributes: {
-    heading: Schema.Attribute.String;
-    socialLink: Schema.Attribute.Component<'elements.link', true>;
-  };
-}
-
-export interface ElementsLogoLink extends Struct.ComponentSchema {
-  collectionName: 'components_elements_logo_links';
-  info: {
-    displayName: 'Logo Link';
-  };
-  attributes: {
-    image: Schema.Attribute.Media;
-    href: Schema.Attribute.String;
-    text: Schema.Attribute.String;
-  };
-}
-
-export interface ElementsLink extends Struct.ComponentSchema {
-  collectionName: 'components_elements_links';
-  info: {
-    displayName: 'Link';
-  };
-  attributes: {
-    href: Schema.Attribute.String;
-    text: Schema.Attribute.String;
-    external: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-  };
-}
-
-export interface ElementsItem extends Struct.ComponentSchema {
-  collectionName: 'components_elements_items';
-  info: {
-    displayName: 'Item';
-  };
-  attributes: {
-    heading: Schema.Attribute.String;
-    text: Schema.Attribute.Text;
-    icon: Schema.Attribute.Enumeration<['CHECK']>;
-  };
-}
-
-export interface ElementsCard extends Struct.ComponentSchema {
-  collectionName: 'components_elements_cards';
-  info: {
-    displayName: 'Card';
-  };
-  attributes: {
-    text: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    subHeading: Schema.Attribute.String;
-    image: Schema.Attribute.Media;
-  };
-}
-
 export interface LayoutYtVideo extends Struct.ComponentSchema {
   collectionName: 'components_layout_yt_videos';
   info: {
@@ -185,14 +124,70 @@ export interface LayoutCardQuote extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsSocialLinks extends Struct.ComponentSchema {
+  collectionName: 'components_elements_social_links';
+  info: {
+    displayName: 'Social Links';
+    description: '';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    socialLink: Schema.Attribute.Component<'elements.link', true>;
+  };
+}
+
+export interface ElementsLogoLink extends Struct.ComponentSchema {
+  collectionName: 'components_elements_logo_links';
+  info: {
+    displayName: 'Logo Link';
+  };
+  attributes: {
+    image: Schema.Attribute.Media;
+    href: Schema.Attribute.String;
+    text: Schema.Attribute.String;
+  };
+}
+
+export interface ElementsLink extends Struct.ComponentSchema {
+  collectionName: 'components_elements_links';
+  info: {
+    displayName: 'Link';
+  };
+  attributes: {
+    href: Schema.Attribute.String;
+    text: Schema.Attribute.String;
+    external: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+  };
+}
+
+export interface ElementsItem extends Struct.ComponentSchema {
+  collectionName: 'components_elements_items';
+  info: {
+    displayName: 'Item';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    text: Schema.Attribute.Text;
+    icon: Schema.Attribute.Enumeration<['CHECK']>;
+  };
+}
+
+export interface ElementsCard extends Struct.ComponentSchema {
+  collectionName: 'components_elements_cards';
+  info: {
+    displayName: 'Card';
+  };
+  attributes: {
+    text: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    subHeading: Schema.Attribute.String;
+    image: Schema.Attribute.Media;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'elements.social-links': ElementsSocialLinks;
-      'elements.logo-link': ElementsLogoLink;
-      'elements.link': ElementsLink;
-      'elements.item': ElementsItem;
-      'elements.card': ElementsCard;
       'layout.yt-video': LayoutYtVideo;
       'layout.section-heading': LayoutSectionHeading;
       'layout.navigation': LayoutNavigation;
@@ -203,6 +198,11 @@ declare module '@strapi/strapi' {
       'layout.content-items': LayoutContentItems;
       'layout.content-image': LayoutContentImage;
       'layout.card-quote': LayoutCardQuote;
+      'elements.social-links': ElementsSocialLinks;
+      'elements.logo-link': ElementsLogoLink;
+      'elements.link': ElementsLink;
+      'elements.item': ElementsItem;
+      'elements.card': ElementsCard;
     }
   }
 }
